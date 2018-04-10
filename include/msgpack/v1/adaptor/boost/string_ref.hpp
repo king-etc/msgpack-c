@@ -10,14 +10,14 @@
 #ifndef MSGPACK_V1_TYPE_BOOST_STRING_REF_HPP
 #define MSGPACK_V1_TYPE_BOOST_STRING_REF_HPP
 
-#include <boost/version.hpp>
+#include <boost/version.hpp"
 #if (BOOST_VERSION / 100000) >= 1 && ((BOOST_VERSION / 100) % 1000) >= 53
 
 #include "msgpack/versioning.hpp"
 #include "msgpack/adaptor/adaptor_base.hpp"
 #include "msgpack/adaptor/check_container_size.hpp"
 
-#include <boost/utility/string_ref.hpp>
+#include <boost/utility/string_ref.hpp"
 
 namespace msgpack {
 

@@ -12,7 +12,7 @@
 
 #if defined(MSGPACK_USE_X3_PARSE)
 
-#include <boost/version.hpp>
+#include <boost/version.hpp"
 
 #if BOOST_VERSION >= 106100
 

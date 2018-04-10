@@ -28,8 +28,8 @@
 #include "msgpack/adaptor/vector.hpp"
 #include "msgpack/adaptor/map.hpp"
 
-#include <boost/variant.hpp>
-#include <boost/operators.hpp>
+#include <boost/variant.hpp"
+#include <boost/operators.hpp"
 
 namespace msgpack {
 

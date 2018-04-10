@@ -12,7 +12,7 @@
 
 #if defined(MSGPACK_USE_X3_PARSE)
 
-#include <boost/version.hpp>
+#include <boost/version.hpp"
 
 #if BOOST_VERSION >= 106100
 
@@ -24,9 +24,9 @@
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #endif // __GNUC__ >= 4
 
-#include <boost/config/warning_disable.hpp>
-#include <boost/spirit/home/x3.hpp>
-#include <boost/spirit/home/x3/binary.hpp>
+#include <boost/config/warning_disable.hpp"
+#include <boost/spirit/home/x3.hpp"
+#include <boost/spirit/home/x3/binary.hpp"
 
 namespace msgpack {
 

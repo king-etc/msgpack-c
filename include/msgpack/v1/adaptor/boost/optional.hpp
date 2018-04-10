@@ -20,7 +20,7 @@
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #endif // (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)) || defined(__clang__)
 
-#include <boost/optional.hpp>
+#include <boost/optional.hpp"
 
 #if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)) || defined(__clang__)
 #pragma GCC diagnostic pop

@@ -12,13 +12,13 @@
 # ifndef MSGPACK_PREPROCESSOR_ITERATION_ITERATE_HPP
 # define MSGPACK_PREPROCESSOR_ITERATION_ITERATE_HPP
 #
-# include <msgpack/preprocessor/arithmetic/dec.hpp>
-# include <msgpack/preprocessor/arithmetic/inc.hpp>
-# include <msgpack/preprocessor/array/elem.hpp>
-# include <msgpack/preprocessor/array/size.hpp>
-# include <msgpack/preprocessor/cat.hpp>
-# include <msgpack/preprocessor/slot/slot.hpp>
-# include <msgpack/preprocessor/tuple/elem.hpp>
+# include "msgpack/preprocessor/arithmetic/dec.hpp"
+# include "msgpack/preprocessor/arithmetic/inc.hpp"
+# include "msgpack/preprocessor/array/elem.hpp"
+# include "msgpack/preprocessor/array/size.hpp"
+# include "msgpack/preprocessor/cat.hpp"
+# include "msgpack/preprocessor/slot/slot.hpp"
+# include "msgpack/preprocessor/tuple/elem.hpp"
 #
 # /* MSGPACK_PP_ITERATION_DEPTH */
 #
@@ -73,10 +73,10 @@
 #
 # define MSGPACK_PP_ITERATE() MSGPACK_PP_CAT(MSGPACK_PP_ITERATE_, MSGPACK_PP_INC(MSGPACK_PP_ITERATION_DEPTH()))
 #
-# define MSGPACK_PP_ITERATE_1 <msgpack/preprocessor/iteration/detail/iter/forward1.hpp>
-# define MSGPACK_PP_ITERATE_2 <msgpack/preprocessor/iteration/detail/iter/forward2.hpp>
-# define MSGPACK_PP_ITERATE_3 <msgpack/preprocessor/iteration/detail/iter/forward3.hpp>
-# define MSGPACK_PP_ITERATE_4 <msgpack/preprocessor/iteration/detail/iter/forward4.hpp>
-# define MSGPACK_PP_ITERATE_5 <msgpack/preprocessor/iteration/detail/iter/forward5.hpp>
+# define MSGPACK_PP_ITERATE_1 "msgpack/preprocessor/iteration/detail/iter/forward1.hpp"
+# define MSGPACK_PP_ITERATE_2 "msgpack/preprocessor/iteration/detail/iter/forward2.hpp"
+# define MSGPACK_PP_ITERATE_3 "msgpack/preprocessor/iteration/detail/iter/forward3.hpp"
+# define MSGPACK_PP_ITERATE_4 "msgpack/preprocessor/iteration/detail/iter/forward4.hpp"
+# define MSGPACK_PP_ITERATE_5 "msgpack/preprocessor/iteration/detail/iter/forward5.hpp"
 #
 # endif
