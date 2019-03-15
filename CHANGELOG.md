@@ -1,3 +1,26 @@
+# 2018-09-09 version 3.1.1
+
+  * Add force endian set functionality (#736)
+  * Fix vrefbuffer memory management problem (#733)
+  * Fix msvc specific problem (#731, #732)
+  * Update boost from 1.61.0 to 1.68.0 (#730)
+  * Fix msgpack_timestamp type mismatch bug (#726)
+
+# 2018-08-10 version 3.1.0
+
+  * Improve documents (#687, #718)
+  * Add fuzzer support (#689)
+  * Fix msgpack::object union member access bug (#694)
+  * Improve cross platform configuration (#704)
+  * Fix out of range dereference bug of EXT (#705)
+  * Add timestamp support. std::chrono::system_clock::time_point is mapped to TIMESTAMP (#706)
+  * Add minimal timestamp support for C. The type `msgpack_timestamp` and the function `msgpack_object_to_timestamp()` are introduced (#707)
+  * Improve MSGPACK_DEFINE family name confliction probability (#710)
+  * Add no static-library build option (BUILD_SHARED_LIBS=ON) (#713, #717, #722)
+  * Add header only cmake target (#721)
+  * Add `std::byte` adaptor (#719)
+  * Remove some warnings (#720)
+
 # 2018-05-12 version 3.0.1
 
   * Add fuzz directory to release tar ball (#686)
@@ -7,7 +30,7 @@
 
 ## << breaking changes >>
 
-  * Change offset parameter updating rule. If parse error is happend, offset is updated to the error position. (#639, #666)
+  * Change offset parameter updating rule. If parse error happens, offset is updated to the error position. (#639, #666)
 
 ## << other updates >>
 

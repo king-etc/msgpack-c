@@ -331,6 +331,16 @@ TEST(MSGPACK, simple_buffer_fixext1)
     EXPECT_EQ(1ul, oh.get().via.ext.size);
     EXPECT_EQ(1, oh.get().via.ext.type());
     EXPECT_EQ(2, oh.get().via.ext.data()[0]);
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(1ul, oh2.get().via.ext.size);
+    EXPECT_EQ(1, oh2.get().via.ext.type());
+    EXPECT_EQ(2, oh2.get().via.ext.data()[0]);
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext2)
@@ -347,6 +357,17 @@ TEST(MSGPACK, simple_buffer_fixext2)
     EXPECT_EQ(0, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(2ul, oh2.get().via.ext.size);
+    EXPECT_EQ(0, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext4)
@@ -363,6 +384,17 @@ TEST(MSGPACK, simple_buffer_fixext4)
     EXPECT_EQ(1, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(4ul, oh2.get().via.ext.size);
+    EXPECT_EQ(1, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext8)
@@ -379,6 +411,17 @@ TEST(MSGPACK, simple_buffer_fixext8)
     EXPECT_EQ(1, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(8ul, oh2.get().via.ext.size);
+    EXPECT_EQ(1, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext16)
@@ -395,6 +438,17 @@ TEST(MSGPACK, simple_buffer_fixext16)
     EXPECT_EQ(1, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(16ul, oh2.get().via.ext.size);
+    EXPECT_EQ(1, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext_1byte_0)
@@ -426,6 +480,17 @@ TEST(MSGPACK, simple_buffer_fixext_1byte_255)
     EXPECT_EQ(77, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(size, oh2.get().via.ext.size);
+    EXPECT_EQ(77, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext_2byte_256)
@@ -444,6 +509,17 @@ TEST(MSGPACK, simple_buffer_fixext_2byte_256)
     EXPECT_EQ(77, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(size, oh2.get().via.ext.size);
+    EXPECT_EQ(77, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext_2byte_65535)
@@ -462,6 +538,17 @@ TEST(MSGPACK, simple_buffer_fixext_2byte_65535)
     EXPECT_EQ(77, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(size, oh2.get().via.ext.size);
+    EXPECT_EQ(77, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_fixext_4byte_65536)
@@ -480,6 +567,17 @@ TEST(MSGPACK, simple_buffer_fixext_4byte_65536)
     EXPECT_EQ(77, oh.get().via.ext.type());
     EXPECT_TRUE(
         std::equal(buf, buf + sizeof(buf), oh.get().via.ext.data()));
+
+    msgpack::sbuffer sbuf2;
+    msgpack::pack(sbuf2, oh.get());
+    msgpack::object_handle oh2 =
+        msgpack::unpack(sbuf2.data(), sbuf2.size());
+    EXPECT_EQ(size, oh2.get().via.ext.size);
+    EXPECT_EQ(77, oh2.get().via.ext.type());
+    EXPECT_TRUE(
+        std::equal(buf, buf + sizeof(buf), oh2.get().via.ext.data()));
+
+    EXPECT_EQ(oh.get(), oh2.get());
 }
 
 TEST(MSGPACK, simple_buffer_ext_convert)
@@ -612,5 +710,24 @@ TEST(MSGPACK_STL, simple_buffer_non_const_cstring)
         string val2 = oh.get().as<string>();
         EXPECT_EQ(val1.size(), val2.size());
         EXPECT_EQ(val1, val2);
+    }
+}
+
+TEST(MSGPACK_STL, simple_buffer_wstring)
+{
+    for (unsigned int k = 0; k < kLoop; k++) {
+        wstring val1;
+        for (unsigned int i = 0; i < kElements; i++)
+            val1 += L'a' + rand() % 26;
+        msgpack::sbuffer sbuf;
+        msgpack::pack(sbuf, val1);
+        msgpack::object_handle oh =
+            msgpack::unpack(sbuf.data(), sbuf.size());
+        EXPECT_EQ(oh.get().type, msgpack::type::ARRAY);
+        wstring val2 = oh.get().as<wstring>();
+        EXPECT_EQ(val1, val2);
+        wstring val3;
+        oh.get().convert(val3);
+        EXPECT_EQ(val1, val3);
     }
 }
